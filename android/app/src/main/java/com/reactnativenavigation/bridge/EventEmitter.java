@@ -60,7 +60,8 @@ public class EventEmitter {
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
             emitter.sendNavigatorEvent(eventId, navigatorEventId);
-        }    }
+        }
+    }
 
     public void sendNavigatorEvent(String eventId, String navigatorEventId, WritableMap data) {
         if (!NavigationApplication.instance.isReactContextInitialized()) {
@@ -68,8 +69,9 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            emitter.sendNavigatorEvent(eventId, navigatorEventId);
-        }    }
+            emitter.sendNavigatorEvent(eventId, navigatorEventId, data);
+        }
+    }
 
     public void sendEvent(String eventId, String navigatorEventId) {
         if (!NavigationApplication.instance.isReactContextInitialized()) {
@@ -77,8 +79,9 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            emitter.sendNavigatorEvent(eventId, navigatorEventId);
-        }    }
+            emitter.sendEvent(eventId, navigatorEventId);
+        }
+    }
 
     public void sendNavigatorEvent(String eventId, WritableMap arguments) {
         if (!NavigationApplication.instance.isReactContextInitialized()) {
@@ -86,8 +89,9 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            emitter.sendNavigatorEvent(eventId, navigatorEventId);
-        }    }
+            emitter.sendEvent(eventId, arguments);
+        }
+    }
 
     public void sendEvent(String eventId) {
         if (!NavigationApplication.instance.isReactContextInitialized()) {
@@ -95,8 +99,9 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            emitter.sendNavigatorEvent(eventId, navigatorEventId);
-        }    }
+            emitter.sendEvent(eventId, Arguments.createMap());
+        }
+    }
 
     public void sendAppLaunchedEvent() {
         if (!NavigationApplication.instance.isReactContextInitialized()) {
@@ -104,6 +109,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            emitter.sendNavigatorEvent(eventId, navigatorEventId);
-        }    }
+            emitter.sendEvent("RNN.appLaunched", Arguments.createMap());
+        }
+    }
 }
