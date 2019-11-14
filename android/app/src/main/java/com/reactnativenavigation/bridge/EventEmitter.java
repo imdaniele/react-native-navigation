@@ -59,7 +59,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            // emitter.sendNavigatorEvent(eventId, navigatorEventId);
+            emitter.sendNavigatorEvent(eventId, navigatorEventId);
         }
     }
 
@@ -69,7 +69,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            // emitter.sendNavigatorEvent(eventId, navigatorEventId, data);
+            emitter.sendNavigatorEvent(eventId, navigatorEventId, data);
         }
     }
 
@@ -79,7 +79,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            // emitter.sendEvent(eventId, navigatorEventId);
+            emitter.sendEvent(eventId, navigatorEventId);
         }
     }
 
@@ -89,7 +89,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            // emitter.sendEvent(eventId, arguments);
+            emitter.sendEvent(eventId, arguments);
         }
     }
 
@@ -99,7 +99,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            // emitter.sendEvent(eventId, Arguments.createMap());
+            emitter.sendEvent(eventId, Arguments.createMap());
         }
     }
 
@@ -109,7 +109,7 @@ public class EventEmitter {
         }
         NavigationReactEventEmitter emitter = reactGateway.getReactEventEmitter();
         if (emitter != null) {
-            // emitter.sendEvent("RNN.appLaunched", Arguments.createMap());
+            emitter.sendEvent("RNN.appLaunched", Arguments.createMap());
         }
     }
 }
