@@ -20,7 +20,7 @@ import com.reactnativenavigation.react.ReactGateway;
 
 import java.util.List;
 
-public abstract class NavigationApplication extends Application implements ReactApplication {
+public abstract class NavigationApplication extends Application implements ReactApplication, EventEmitter.GatewayCallbacks {
 
     public static NavigationApplication instance;
 
@@ -35,7 +35,7 @@ public abstract class NavigationApplication extends Application implements React
         instance = this;
         handler = new Handler(getMainLooper());
         reactGateway = new NavigationReactGateway();
-        eventEmitter = new EventEmitter(reactGateway);
+        eventEmitter = new EventEmitter(reactGateway, this);
         activityCallbacks = new ActivityCallbacks();
     }
 
@@ -133,4 +133,11 @@ public abstract class NavigationApplication extends Application implements React
 
     @Nullable
     public abstract List<ReactPackage> createAdditionalReactPackages();
+
+    @Override
+    public void onReactEventEmitterException(Exception e) {
+        onEmitterException(e);
+    }
+
+    public abstract void onEmitterException(Exception e);
 }
