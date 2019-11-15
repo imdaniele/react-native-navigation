@@ -135,9 +135,6 @@ public abstract class NavigationApplication extends Application implements React
     public abstract List<ReactPackage> createAdditionalReactPackages();
 
     @Override
-    public void onReactEventEmitterException(Exception e) {
-        onEmitterException(e);
-    }
+    public abstract void onReactEventEmitterException(Exception e);
 
-    public abstract void onEmitterException(Exception e);
 }
